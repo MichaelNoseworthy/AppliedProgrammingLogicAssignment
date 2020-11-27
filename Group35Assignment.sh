@@ -1,2 +1,5 @@
 @echo test
-#This is a comment.
+
+#I made a new comment
+@echo new comment made
+#test
