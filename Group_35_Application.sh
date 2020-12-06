@@ -85,3 +85,37 @@ written as the product of 5 and 6 (30=5x6), which are two numbers in succession.
 	esac #Exit of switch loop
 #place while loop ending
 done
+
+
+#Asking the user for a max value and printing a list of numbers in succession and their products until it reaches the users input.
+
+Echo "Please enter a maximum value:"
+read maxvalue
+
+#setting variables
+
+let input=maxvalue
+let  x=1
+let count=0
+let int=0
+let y=0
+
+#calculates and prints the numbers
+
+while [$y -eq 0]
+       do
+       int=$(($x *($x + 1)))
+       if [$int -le $maxvalue]
+       then
+                xx=$(($x+1))
+                echo "$x * $xx = $int"
+                count=$(($count + 1))
+                x=$((x + 1))
+        else
+                y=1
+        fi 
+done
+
+#prints the count
+
+echo "Total numbers printed: $count"
