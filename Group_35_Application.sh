@@ -67,7 +67,38 @@ example if the user inputs a=3, b=-4, the first few terms that should be printed
 			echo "Task 3: Find the numbers that can be expressed as the product of two nonnegative integers in
 succession and print them in increasing order. (For example, 30 is such a number as it can be
 written as the product of 5 and 6 (30=5x6), which are two numbers in succession.)"
-			#TODO
+			#Asking the user for a max value and printing a list of numbers in succession and their products until it reaches the users input.
+
+			echo "Please enter a maximum value:"
+			read maxvalue
+
+			#setting variables
+
+			let input=maxvalue
+			let  x=1
+			let count=0
+			let int=0
+			let y=0
+
+			#calculates and prints the numbers
+
+			while [$y -eq 0]
+      				do
+      				int=$(($x *($x + 1)))
+      			 	if [$int -le $maxvalue]
+       				then
+               			xx=$(($x+1))
+                		echo "$x * $xx = $int"
+                		count=$(($count + 1))
+                		x=$((x + 1))
+        			else
+                		y=1
+        		fi 
+			done
+
+			#prints the count
+
+			echo "Total numbers printed: $count"
 			echo "Task 3 complete.  Returning to main menu"
 			;;
 		
@@ -85,37 +116,3 @@ written as the product of 5 and 6 (30=5x6), which are two numbers in succession.
 	esac #Exit of switch loop
 #place while loop ending
 done
-
-
-#Asking the user for a max value and printing a list of numbers in succession and their products until it reaches the users input.
-
-Echo "Please enter a maximum value:"
-read maxvalue
-
-#setting variables
-
-let input=maxvalue
-let  x=1
-let count=0
-let int=0
-let y=0
-
-#calculates and prints the numbers
-
-while [$y -eq 0]
-       do
-       int=$(($x *($x + 1)))
-       if [$int -le $maxvalue]
-       then
-                xx=$(($x+1))
-                echo "$x * $xx = $int"
-                count=$(($count + 1))
-                x=$((x + 1))
-        else
-                y=1
-        fi 
-done
-
-#prints the count
-
-echo "Total numbers printed: $count"
