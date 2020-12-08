@@ -82,10 +82,10 @@ written as the product of 5 and 6 (30=5x6), which are two numbers in succession.
 
 			#calculates and prints the numbers
 
-			while [$y -eq 0]
+			while [ $y -eq 0 ]
       				do
       				int=$(($x *($x + 1)))
-      			 	if [$int -le $maxvalue]
+      			 	if [ $int -le $maxvalue ]
        				then
                			xx=$(($x+1))
                 		echo "$x * $xx = $int"
